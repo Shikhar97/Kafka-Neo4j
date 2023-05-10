@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kafka-connect-deployment
+  labels:
+    app: kafka-connect
+spec:
+  selector:
+    matchLabels:
+      app: kafka-connect
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: kafka-connect
+    spec:
+      containers:
+      - name: kafka-connect
+        image: veedata/kafka-neo4j-connect:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8083

@@ -1,0 +1,4 @@
+neo4j==4.1.0
+pandas==1.5.1
+pyarrow==11.0.0
+requests==2.27.1
